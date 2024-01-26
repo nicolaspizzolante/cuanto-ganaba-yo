@@ -39,19 +39,31 @@ form {
 
 input {
   outline: none;
+  width: 100%;
+  border-radius: 5px;
 }
 
 input[type="date"] {
   padding: 10px;
-  border-radius: 5px;
   color: #fff;
   border: 1px solid var(--background);
   background: var(--background);
   margin-bottom: 10px;
+  appearance: none;
+  -moz-appearance: textfield;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
+}
+
+input[type="number"] {
+  padding: 10px;
+  color: #fff;
+  border: 1px solid var(--background);
+  background: var(--background);
+  margin-bottom: 10px;
+  -moz-appearance: textfield;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -60,31 +72,10 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-/* For Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-/* For Firefox */
-input[type="date"] {
-  appearance: none;
-  -moz-appearance: textfield;
-}
-
-input[type="number"] {
-  padding: 10px;
-  border-radius: 5px;
-  color: #fff;
-  border: 1px solid var(--background);
-  background: var(--background);
-  margin-bottom: 10px;
-}
-
 input[type="submit"] {
   cursor: pointer;
   background: #365a50;
   color: #fff;
-  border-radius: 5px;
   padding: 10px 20px;
   border: 1px solid #365a50;
   transition: 0.3s;
@@ -98,20 +89,20 @@ input[type="submit"] {
   margin-bottom: 20px;
 }
 
-#result {
+#result,
+#errors {
   display: none;
   color: #fff;
-  background: #58a378;
   padding: 10px;
   border-radius: 5px;
+}
+
+#result {
+  background: #58a378;
   margin-bottom: 10px;
 }
 
 #errors {
-  display: none;
-  color: #fff;
   background: #ff6666;
-  padding: 10px;
-  border-radius: 5px;
   margin: 10px 0;
 }
